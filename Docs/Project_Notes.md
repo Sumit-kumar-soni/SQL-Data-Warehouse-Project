@@ -15,8 +15,6 @@ covering practical applications in both Data Warehousing and Data Analytics.
 * Data Integration & Cataloging
 * Bulk Insert vs Normal Insert
 
----
-
 #### 🔶 SQL Data Analytics Projects:
 
 * Dimensions vs Measures
