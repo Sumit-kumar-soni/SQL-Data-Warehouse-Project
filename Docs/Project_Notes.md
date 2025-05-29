@@ -3,6 +3,8 @@
 This repository contains a structured collection of SQL projects based on a comprehensive SQL course by Sumit Kumar Soni,
 covering practical applications in both Data Warehousing and Data Analytics.
 
+---
+
 ### 🚀 Key Concepts Covered
 
 #### 🔷 SQL Data Warehouse Projects:
@@ -13,12 +15,16 @@ covering practical applications in both Data Warehousing and Data Analytics.
 * Data Integration & Cataloging
 * Bulk Insert vs Normal Insert
 
+---
+
 #### 🔶 SQL Data Analytics Projects:
 
 * Dimensions vs Measures
 * Fact and Dimension Table Design
 * Real-world analytics concepts
 * End-to-end reporting flow
+
+---
 
 ### 📌 Why This Project?
 
