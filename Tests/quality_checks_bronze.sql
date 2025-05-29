@@ -53,20 +53,19 @@ INSERT INTO Silver.crm_cust_info (
 SELECT
 	cst_id,
 	cst_key,
-	TRIM(cst_firstname) AS cst_firstname,
-	TRIM(cst_lastname) AS cst_lastname,
+	TRIM(cst_firstname) AS cst_firstname,    -- Remove Unwanted Spaces
+	TRIM(cst_lastname) AS cst_lastname,      -- Remove Unwanted Spaces
 CASE WHEN UPPER(TRIM(cst_marital_status)) = 'S' THEN 'Single'
 	 WHEN UPPER(TRIM(cst_marital_status)) = 'M' THEN 'Married'
 	 ELSE 'n/a'
-END cst_marital_status,
+END cst_marital_status,                      -- Normalize marital status values to readable format
 CASE WHEN UPPER(TRIM(cst_gndr)) = 'F' THEN 'Female'
 	 WHEN UPPER(TRIM(cst_gndr)) = 'M' THEN 'Male'
 	 ELSE 'n/a'
-END cst_gndr,
+END cst_gndr,                                -- Normalize gender values to readable format
 	cst_create_date
 FROM(
 	SELECT *,
 	ROW_NUMBER() OVER(PARTITION BY cst_id ORDER BY cst_create_date) AS Flag_Last
 	FROM Bronze.crm_cust_info
-)t WHERE Flag_Last = 1;
-SELECT * FROM Silver.crm_cust_info
+)t WHERE Flag_Last = 1;                       -- Select the most recent record per customer
